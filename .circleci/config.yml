@@ -195,7 +195,7 @@ jobs:
           command: |
             cat ~/inventory.txt
             cd ansible
-            ansible-playbook -vvv -i ~/inventory.txt save-elb-dns.yml --ssh-common-args='-o StrictHostKeyChecking=no'
+            ansible-playbook -vvv -i ~/inventory.txt save-elb-dns.yml
             cat ~/elb_dns.txt
       - persist_to_workspace:
           root: ~/
