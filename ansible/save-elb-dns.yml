@@ -5,7 +5,7 @@
   gather_facts: false
   become: yes
   vars:
-    ansible_connection: none
+    ansible_connection: ssh
     ENVIRONMENT_NAME: "{{ lookup('env', 'ENVIRONMENT_NAME') }}"
   tasks:
     - name: Get the LoadBalancer's DNS name
