@@ -9,9 +9,9 @@
   tasks:
     - name: Get the LoadBalancer's DNS name
       shell: "./bin/kubectl get services"
-      register: elb_dns
-      args:
-        chdir: $HOME
+      # register: elb_dns
+      # args:
+      #   chdir: $HOME
 
     - name: Copy the output to a local file
       copy:
