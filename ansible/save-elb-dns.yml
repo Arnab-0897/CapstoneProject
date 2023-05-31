@@ -1,6 +1,6 @@
 ---
 - name: "Save LoadBalancer's DNS name locally"
-  hosts: management[0]
+  hosts: management
   user: ubuntu
   gather_facts: false
   become: yes
@@ -8,7 +8,7 @@
     ENVIRONMENT_NAME: "{{ lookup('env', 'ENVIRONMENT_NAME') }}"
   tasks:
     - name: Get the LoadBalancer's DNS name
-      shell: "echo $ENVIRONMENT_NAME"
+      shell: "echo {{ ENVIRONMENT_NAME }}"
       register: elb_dns
       args:
         chdir: $HOME
