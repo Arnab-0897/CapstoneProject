@@ -8,8 +8,10 @@
     ENVIRONMENT_NAME: "{{ lookup('env', 'ENVIRONMENT_NAME') }}"
   tasks:
     - name: Get the LoadBalancer's DNS name
-      shell: "echo $ENVIRONMENT_NAME"
-      shell: "./bin/kubectl get svc capstone-project-service"
+      shell: "echo $ENVIRONMENT_NAME
+      
+      ./bin/kubectl get svc capstone-project-service
+      "
       register: elb_dns
       args:
         chdir: $HOME
